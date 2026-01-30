@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Victoria Effer — Portfolio</title>
+  <meta name="description" content="Projects by Victoria Effer (JoA0085)" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19; --card: #101827; --muted: #7d8da1; --text: #e6edf3;
+      --accent: #4f8cff; --accent-2: #5eead4; --border: #1f2a44; --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: 92%; max-width: 1000px; margin: 0 auto; }
+    header { position: sticky; top: 0; z-index: 10; backdrop-filter: saturate(180%) blur(10px); background: rgba(11,15,25,.6); border-bottom: 1px solid var(--border); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .3px; }
+    .brand .dot { width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 0 10px rgba(79,140,255,.8); }
+    .links a { margin-left: 18px; color: var(--muted); font-weight: 600; }
+    .links a:hover { color: var(--text); }
+    .toggle { margin-left: 16px; padding: 6px 10px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; color: var(--muted); }
+    .hero { padding: 64px 0 32px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; }
+    .hero h1 { font-size: 44px; line-height: 1.1; margin: 0 0 16px; }
+    .hero p { color: var(--muted); margin: 0 0 18px; }
+    .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 12px 16px; border-radius: 10px; font-weight: 700; border: 1px solid var(--border); background: var(--card); color: var(--text); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #0b1020; border: none; box-shadow: var(--shadow); }
+    .portrait { aspect-ratio: 1 / 1; border-radius: 14px; background:
+      radial-gradient(1200px 1200px at 20% 10%, rgba(79,140,255,.2), transparent 40%),
+      radial-gradient(900px 900px at 90% 20%, rgba(94,234,212,.2), transparent 40%),
+      var(--card); border: 1px solid var(--border);
+    }
+    .section { padding: 40px 0; }
+    .section h2 { margin: 0 0 16px; font-size: 26px; }
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(12, 1fr); }
+    .card { grid-column: span 6; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 6px; }
+    .card p { margin: 0; color: var(--muted); }
+    .tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { font-size: 12px; padding: 6px 8px; background: #0d1424; border: 1px solid var(--border); color: var(--muted); border-radius: 8px; }
+    .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    footer { padding: 28px 0 60px; color: var(--muted); border-top: 1px solid var(--border); margin-top: 32px; }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; padding-top: 36px; }
+      .grid .card { grid-column: span 12; }
+      .twocol { grid-template-columns: 1fr; }
+    }
+    body.light { --bg: #f7f9fc; --card: #ffffff; --muted: #5c6b7c; --text: #0b1020; --accent: #2d6cff; --accent-2: #14b8a6; --border: #e5e7eb; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="dot"></div>
+        <div>Victoria Effer</div>
+      </div>
+      <div class="links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <button class="toggle" id="theme-toggle" aria-label="Toggle theme">Toggle</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Hi, I’m Victoria (JoA0085)</h1>
+        <p>I build small web apps and AI bots while learning modern dev tools.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://github.com/JoA0085" target="_blank" rel="noopener">View GitHub</a>
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="btn" href="mailto:ovictoria5555@gmail.com">Contact Me</a>
+        </div>
+      </div>
+      <div class="portrait" aria-hidden="true"></div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Featured Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Who Is The Real Hero</h3>
+          <p>Interactive project exploring hero attribution and story logic.</p>
+          <div class="tags">
+            <span class="tag">JavaScript</span><span class="tag">Frontend</span>
+          </div>
+          <p style="margin-top:10px;"><a href="https://github.com/JoA0085/who-is-the-real-hero" target="_blank" rel="noopener">Repo</a></p>
+        </article>
+        <article class="card">
+          <h3>Funny Chat Bot</h3>
+          <p>A lightweight chatbot with playful responses and simple commands.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">CLI</span>
+          </div>
+          <p style="margin-top:10px;"><a href="https://github.com/JoA0085/FunnyChat_bot" target="_blank" rel="noopener">Repo</a></p>
+        </article>
+        <article class="card">
+          <h3>Next Project</h3>
+          <p>Placeholder for your upcoming app—add details when ready.</p>
+          <div class="tags">
+            <span class="tag">HTML/CSS</span><span class="tag">Learning</span>
+          </div>
+          <p style="margin-top:10px;"><a href="#" target="_blank" rel="noopener">Repo</a></p>
+        </article>
+        <article class="card">
+          <h3>Experimental Sandbox</h3>
+          <p>Small experiments to try ideas fast and track progress.</p>
+          <div class="tags">
+            <span class="tag">JS</span><span class="tag">Playground</span>
+          </div>
+          <p style="margin-top:10px;"><a href="#" target="_blank" rel="noopener">Repo</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <div class="twocol">
+        <div class="card">
+          <h3>Core</h3>
+          <p>JavaScript, HTML/CSS, Python</p>
+        </div>
+        <div class="card">
+          <h3>Tools</h3>
+          <p>Git, GitHub Pages, VS Code</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Email: <a href="mailto:ovictoria5555@gmail.com">ovictoria5555@gmail.com</a> · GitHub: <a href="https://github.com/JoA0085" target="_blank" rel="noopener">JoA0085</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Victoria Effer · Built with GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('theme-toggle');
+    const stored = localStorage.getItem('theme');
+    if (stored === 'light') document.body.classList.add('light');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>
